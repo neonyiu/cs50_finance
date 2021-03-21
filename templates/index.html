@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profolio
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{row.symbols}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.shares}}</td>
+                    <td>{{row.price}}</td>
+                    <td>{{row.total}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>Cash</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{cash}}</td>
+                </tr>
+                <tr>
+                    <td>Grant Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{grant_total}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+{% endblock %}
